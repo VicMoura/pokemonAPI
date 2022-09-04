@@ -4,7 +4,7 @@ angular.module("pokemon").controller("infoPokemonCtrl", function ($scope, $http,
     $scope.pokemon = [];
     var pokemon = $scope.pokemon;
 
-    //Pegado parametro do route
+    //Pegando parametro do route
     var id = $routeParams.id;
     $http.get("https://pokeapi.co/api/v2/pokemon/" + id)
         .then(function (res) {
