@@ -7,4 +7,4 @@ https://vicmoura.github.io/pokemonAPI/
 
 ###############################################################
 
-Para utilização, abrir com o VScode dar "Go Live" no arquivo index.html 
+Para utilização, abrir com o VScode e dar "Go Live" no arquivo index.html 
