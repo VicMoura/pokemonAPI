@@ -1,0 +1,59 @@
+<section ng-controller='infoPokemonCtrl'>
+
+
+    <div id="nomePokemon"> 
+        <h2 >{{ pokemon.pokemonName | uppercase}}</h2>
+    </div>
+    
+
+    <div id="informacoes">
+
+        <img style="width: 500px; height:400px" src='{{ pokemon.pokemonImage }}' />
+
+        <div>
+            <button class="buttonInfo" ng-click="result = 1">Abilities</button>
+
+            <button class="buttonInfo" ng-click="result = 2">Height</button>
+
+            <button class="buttonInfo" ng-click="result = 3">Types</button>
+
+            <button class="buttonInfo" ng-click="result = 4">Weight</button>
+
+            <button class="buttonInfo" ng-click="result = 5">Bexp</button>
+
+            <button class="buttonInfo" ng-click="result = 6">Stats</button>
+
+        </div>
+
+        
+            <div ng-if="result === 1" class="infoPokemon" ng-repeat="dados in pokemon.pokemonHabilidade">
+                <h4>{{dados.ability.name  | uppercase}}</h4>
+            </div>
+
+            <div ng-if="result === 2" class="infoPokemon">
+                 <h4 >{{pokemon.pokemonData.height/10 | uppercase}}m</h4>
+            </div>
+
+            <div ng-if="result === 3" class="infoPokemon" ng-repeat="dados in pokemon.pokemonTypes">
+                    <h4>{{dados.type.name | uppercase}}</h4>
+            </div>
+            
+            <div ng-if="result === 4" class="infoPokemon">
+                <h4>{{pokemon.pokemonData.weight/10 | uppercase}}kg</h4>
+            </div>
+
+            <div ng-if="result === 5" class="infoPokemon">
+                <h4>{{pokemon.pokemonData.base_experience | uppercase}}</h4>
+            </div>
+
+            <div ng-if="result === 6" class="infoPokemon" ng-repeat="dados in pokemon.pokemonStats">
+                <h4>{{dados.stat.name | uppercase}} = {{dados.base_stat | uppercase}}</h4>
+              
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>

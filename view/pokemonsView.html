@@ -1,0 +1,17 @@
+<section ng-controller='pokemonCtrl'>
+
+
+    <input class="search" type="text" ng-model="criterioDeBusca" placeholder="Digite o nome do Pokemon" />
+    <div clas="pokemon"> </div>
+
+
+    <div class='pokemon' ng-repeat="pokemon in pokemonDados | filter: {pokemonName : criterioDeBusca}">
+        <h2 class='name'>{{ pokemon.pokemonName }}</h2>
+        <img ng-src='{{ pokemon.pokemonImage }}' />
+        <a class="btn btn-success" href="#!/info/{{pokemon.pokemonID}}">
+            <h4>INFO</h4>
+        </a>
+    </div>
+
+
+</section>
